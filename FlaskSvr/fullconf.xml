@@ -1,0 +1,61 @@
+<migration urlid="http://www.microsoft.com/migration/1.0/migxmlext/migtestapp">
+  <component type="Application">
+    <!-- Name of the application -->
+    <displayName>Some Application</displayName>
+    <!-- Specify whether the environment variables exist in the context of user or system or both -->
+    <environment context="System">
+      <!-- Create the environment variables -->
+      <variable name="myVar1">
+        <!-- Simple text value assignment to a variable -->
+        <text>value</text>
+      </variable>
+      <variable name="myAppExePath">
+        <!-- Make a call to in-built helper function to get a value from a reg key and assign that value to the variable -->
+        <script>MigXMLHelper.GetStringContent("Registry","HKLM\Software\MyApp\Installer [EXEPATH]")</script>
+      </variable>
+    </environment>
+    <role role="Settings">
+      <detects>
+        <!-- All of these checks must be true for the component to be detected -->
+        <detect>
+          <!-- Make a call to in-built helper function to check if an object exists or not -->
+          <condition>MigXMLHelper.DoesObjectExist("Registry","HKLM\Software\MyApp [win32_version]")</condition>
+        </detect>
+        <detect>
+          <!-- Either of these checks must be true for the component to be detected -->
+          <!-- Make a call to in-built helper function to check if a file version matches or not -->
+          <condition>MigXMLHelper.DoesFileVersionMatch("%MyAppExePath%","ProductVersion","8.*")</condition>
+          <condition>MigXMLHelper.DoesFileVersionMatch("%MyAppExePath%","ProductVersion","9.*")</condition>
+        </detect>
+      </detects>
+      <!-- Describe the rules that will be executed during migration of this component and the context, whether user, system or both -->
+      <rules context="User">
+        <!-- Delete objects specified in the object set on the destination computer before applying source objects -->
+        <destinationCleanup>
+          <!-- Describe the pattern for the list of objects to be deleted -->
+          <objectSet>
+            <pattern type="Registry">HKCU\Software\MyApp\Toolbar\* [*]</pattern>
+            <pattern type="Registry">HKCU\Software\MyApp\ListView\* [*]</pattern>
+            <pattern type="Registry">HKCU\Software\MyApp [ShowTips]</pattern>
+          </objectSet>
+        </destinationCleanup>
+        <!-- Specify which set of objects should be migrated -->
+        <include>
+          <!-- Describe the pattern for the list of objects to be included -->
+          <objectSet>
+            <pattern type="Registry">HKCU\Software\MyApp\Toolbar\* [*]</pattern>
+            <pattern type="Registry">HKCU\Software\MyApp\ListView\* [*]</pattern>
+            <pattern type="Registry">HKCU\Software\MyApp [ShowTips]</pattern>
+          </objectSet>
+        </include>
+        <!-- Specify which set of objects should not be migrated -->
+        <exclude>
+          <!-- Describe the pattern for the list of objects to be excluded from migration -->
+          <objectSet>
+            <pattern type="Registry">HKCU\Software\MyApp [Display]</pattern>
+          </objectSet>
+        </exclude>
+      </rules>
+    </role>
+  </component>
+</migration>
