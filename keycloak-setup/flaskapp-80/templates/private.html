@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private</title>
+</head>
+<body style="background-color: #29235c; color: white;">
+    {{greeting}} your email is {{email}} and your user_id is {{uid}}! Config : {{grp}}
+    <br>
+    Token is :
+   <div class="result">
+        <pre>{{tkn}}</pre>
+    </div>
+    <ul>
+        <li><a href="/", style="color: #f8aa00">Home</a></li>
+        <li><a href="http://servix1:8080/realms/primx/account?referrer=flaskapp-docker&referrer_uri=http://servix1/private&", style="color: #f8aa00">Account</a></li>
+    </ul>
+</body>
+<footer>
+    <img src="{{ url_for('static', filename='primx_white.png') }}" alt="PRIMX">
+</footer>
+</html>

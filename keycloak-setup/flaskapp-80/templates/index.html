@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body style="background-color: #29235c; color: white;">
+    {% if login=="true" %}
+        Hello, {{name}}, <a href="/private", style="color: #f8aa00">See private</a> <a href="/logout", style="color: #f8aa00">Log out</a>
+    {% else %}
+    Welcome anonymous, <a href="/private", style="color: #f8aa00">Log in</a>
+    {% endif %}
+</body>
+<footer>
+    <img src="{{ url_for('static', filename='primx_white.png') }}" alt="PRIMX">
+</footer>
+</html>
