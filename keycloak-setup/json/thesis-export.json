@@ -1,6 +1,6 @@
 {
   "id": "c0a7f441-0ba7-400f-9e35-261160652b7f",
-  "realm": "primx",
+  "realm": "thesis",
   "notBefore": 0,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": false,
@@ -65,7 +65,7 @@
       },
       {
         "id": "93b5cdb4-9fe7-4f93-90cb-6ace28f05db2",
-        "name": "default-roles-primx",
+        "name": "default-roles-thesis",
         "description": "${role_default-roles}",
         "composite": true,
         "composites": {
@@ -447,7 +447,7 @@
   ],
   "defaultRole": {
     "id": "93b5cdb4-9fe7-4f93-90cb-6ace28f05db2",
-    "name": "default-roles-primx",
+    "name": "default-roles-thesis",
     "description": "${role_default-roles}",
     "composite": true,
     "clientRole": false,
@@ -514,13 +514,13 @@
       "clientId": "account",
       "name": "${client_account}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/primx/account/",
+      "baseUrl": "/realms/thesis/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/primx/account/*"
+        "/realms/thesis/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -558,13 +558,13 @@
       "clientId": "account-console",
       "name": "${client_account-console}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/primx/account/",
+      "baseUrl": "/realms/thesis/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/primx/account/*"
+        "/realms/thesis/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -859,13 +859,13 @@
       "description": "",
       "rootUrl": "${authAdminUrl}",
       "adminUrl": "",
-      "baseUrl": "/admin/primx/console/",
+      "baseUrl": "/admin/thesis/console/",
       "surrogateAuthRequired": false,
       "enabled": false,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/admin/primx/console/*"
+        "/admin/thesis/console/*"
       ],
       "webOrigins": [
         "+"
