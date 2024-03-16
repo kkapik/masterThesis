@@ -147,7 +147,7 @@
               "query-groups",
               "create-client"
             ],
-            "primx-realm": [
+            "thesis-realm": [
               "manage-realm",
               "manage-identity-providers",
               "view-events",
@@ -753,7 +753,7 @@
       ],
       "admin-cli": [],
       "account-console": [],
-      "primx-realm": [
+      "thesis-realm": [
         {
           "id": "0c621bc3-e1d0-4752-94ef-96655a2f3c6e",
           "name": "view-users",
@@ -761,7 +761,7 @@
           "composite": true,
           "composites": {
             "client": {
-              "primx-realm": [
+              "thesis-realm": [
                 "query-users",
                 "query-groups"
               ]
@@ -904,7 +904,7 @@
           "composite": true,
           "composites": {
             "client": {
-              "primx-realm": [
+              "thesis-realm": [
                 "query-clients"
               ]
             }
@@ -1534,8 +1534,8 @@
     },
     {
       "id": "97ed887d-caf8-4225-b675-14d8954394b0",
-      "clientId": "primx-realm",
-      "name": "primx Realm",
+      "clientId": "thesis-realm",
+      "name": "thesis Realm",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
